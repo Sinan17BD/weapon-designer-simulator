@@ -1,0 +1,29 @@
+<script>
+  const weaponImages = {
+    "Laser Rifle": "https://via.placeholder.com/300x150.png?text=Laser+Rifle",
+    "Plasma Cannon": "https://via.placeholder.com/300x150.png?text=Plasma+Cannon",
+    "Railgun": "https://via.placeholder.com/300x150.png?text=Railgun"
+  };
+
+  function generateWeapon() {
+    const type = document.getElementById('type').value;
+    const name = document.getElementById('name').value || 'Unnamed';
+    const power = document.getElementById('power').value;
+    const range = document.getElementById('range').value;
+
+    const summary = `
+      <h3>Weapon Summary</h3>
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Type:</strong> ${type}</p>
+      <p><strong>Power:</strong> ${power}</p>
+      <p><strong>Range:</strong> ${range} meters</p>
+    `;
+
+    document.getElementById('output').innerHTML = summary;
+
+    // Show image
+    const img = document.getElementById('weapon-img');
+    img.src = weaponImages[type];
+    img.alt = type;
+  }
+</script>
